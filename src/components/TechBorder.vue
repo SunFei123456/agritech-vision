@@ -4,14 +4,14 @@ defineProps<{
   class?: string
 }>()
 
-const borderColor = '#fbbf24' // amber-400
-const secondaryColor = 'rgba(251, 191, 36, 0.3)'
+const borderColor = '#10b981' // emerald-500
+const secondaryColor = 'rgba(16, 185, 129, 0.2)'
 </script>
 
 <template>
   <div :class="['relative', $props.class]">
     <!-- Background Layer with transparency and blur -->
-    <div class="absolute inset-0 bg-[#1c1917]/40 backdrop-blur-sm rounded-lg border border-stone-800/50" />
+    <div class="absolute inset-0 bg-white/60 backdrop-blur-sm rounded-lg border border-slate-200 shadow-sm" />
     
     <!-- Corner 1: Top-Left -->
     <div class="absolute top-0 left-0 w-24 h-24 pointer-events-none overflow-hidden rounded-tl-lg z-10">
@@ -61,23 +61,23 @@ const secondaryColor = 'rgba(251, 191, 36, 0.3)'
     <div class="relative z-0 p-6 h-full flex flex-col">
       <div v-if="title" class="flex items-center mb-5 relative">
         <!-- Animated Title Underline -->
-        <div class="absolute -bottom-2 left-0 w-full h-[1px] bg-gradient-to-r from-amber-900/0 via-amber-500/30 to-amber-900/0" />
-        <div class="absolute -bottom-2 left-0 w-1/4 h-[1px] bg-amber-400 shadow-[0_0_8px_#fbbf24]" />
+        <div class="absolute -bottom-2 left-0 w-full h-[1px] bg-gradient-to-r from-emerald-100 via-emerald-500/50 to-emerald-100" />
+        <div class="absolute -bottom-2 left-0 w-1/4 h-[1px] bg-emerald-500 shadow-[0_0_8px_#10b981]" />
         
         <!-- Title Start Decor -->
-        <div class="mr-3 flex items-center justify-center w-5 h-5 border border-amber-500/30 rounded bg-stone-950/50">
-          <div class="w-1.5 h-1.5 bg-amber-400 rounded-sm shadow-[0_0_5px_#fbbf24]" />
+        <div class="mr-3 flex items-center justify-center w-5 h-5 border border-emerald-500/30 rounded bg-emerald-50">
+          <div class="w-1.5 h-1.5 bg-emerald-500 rounded-sm shadow-[0_0_5px_#10b981]" />
         </div>
         
-        <h3 class="text-xl font-bold text-white tracking-[0.15em] font-tech uppercase drop-shadow-md">
+        <h3 class="text-xl font-bold text-slate-800 tracking-[0.15em] font-tech uppercase">
           {{ title }}
         </h3>
         
         <!-- Title End Decor (Status Dots) -->
         <div class="ml-auto flex space-x-1.5 opacity-60">
-          <div class="w-1 h-3 bg-amber-800 skew-x-12" />
-          <div class="w-1 h-3 bg-amber-600 skew-x-12" />
-          <div class="w-1 h-3 bg-amber-400 skew-x-12 animate-pulse" />
+          <div class="w-1 h-3 bg-emerald-300 skew-x-12" />
+          <div class="w-1 h-3 bg-emerald-400 skew-x-12" />
+          <div class="w-1 h-3 bg-emerald-500 skew-x-12 animate-pulse" />
         </div>
       </div>
       <div class="flex-1 relative overflow-hidden">

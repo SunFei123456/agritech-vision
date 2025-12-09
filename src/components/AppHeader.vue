@@ -28,25 +28,25 @@ const formatDate = (date: Date) => {
     <!-- Background Shapes -->
     <div class="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden">
       <!-- Top Border Line with Glow -->
-      <div class="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-amber-500 to-transparent shadow-[0_0_10px_#f59e0b]" />
+      <div class="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-emerald-500 to-transparent shadow-[0_0_10px_#10b981]" />
       
       <!-- Center Trapezoid -->
       <div 
-        class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-16 bg-[#1c1917] border-b-2 border-amber-500/50"
+        class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-16 bg-white border-b-2 border-emerald-500/20 shadow-sm"
         style="clip-path: polygon(0 0, 100% 0, 85% 100%, 15% 100%)"
       >
-        <div class="absolute bottom-0 w-full h-[1px] bg-amber-400 shadow-[0_0_15px_#fbbf24]" />
+        <div class="absolute bottom-0 w-full h-[1px] bg-emerald-400 shadow-[0_0_15px_#34d399]" />
       </div>
       
       <!-- Decorative Lines -->
-      <div class="absolute top-4 left-1/2 -translate-x-[320px] w-24 h-[2px] bg-orange-600 -skew-x-12" />
-      <div class="absolute top-4 right-1/2 translate-x-[320px] w-24 h-[2px] bg-orange-600 skew-x-12" />
+      <div class="absolute top-4 left-1/2 -translate-x-[320px] w-24 h-[2px] bg-emerald-600 -skew-x-12 opacity-50" />
+      <div class="absolute top-4 right-1/2 translate-x-[320px] w-24 h-[2px] bg-emerald-600 skew-x-12 opacity-50" />
     </div>
 
     <!-- Left Info -->
-    <div class="flex items-center space-x-6 mt-2 relative z-10 text-amber-100/80 text-sm font-tech tracking-wide">
+    <div class="flex items-center space-x-6 mt-2 relative z-10 text-slate-600 text-sm font-tech tracking-wide">
       <div class="flex items-center space-x-2">
-        <span class="text-amber-400">天气</span>
+        <span class="text-emerald-600 font-bold">天气</span>
         <span>晴天</span>
       </div>
       <div>
@@ -57,16 +57,16 @@ const formatDate = (date: Date) => {
 
     <!-- Center Title -->
     <div class="absolute left-1/2 -translate-x-1/2 top-1 z-20 text-center">
-      <h1 class="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-b from-white to-amber-200 font-tech tracking-widest drop-shadow-[0_2px_10px_rgba(245,158,11,0.5)]">
+      <h1 class="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-b from-emerald-600 to-emerald-800 font-tech tracking-widest drop-shadow-sm">
         农田智能管理平台
       </h1>
-      <p class="text-[10px] text-amber-400/60 uppercase tracking-[0.5em] mt-1">智慧农田管理系统</p>
+      <p class="text-[10px] text-emerald-600/60 uppercase tracking-[0.5em] mt-1 font-bold">智慧农田管理系统</p>
     </div>
 
     <!-- Right Info -->
     <div class="flex items-center space-x-6 mt-2 relative z-10 text-sm">
-      <div class="text-amber-100/80 font-tech">
-        运行时间 <span class="text-amber-400 text-lg mx-1 font-bold">266</span> 天
+      <div class="text-slate-600 font-tech">
+        运行时间 <span class="text-emerald-600 text-lg mx-1 font-bold">266</span> 天
       </div>
       <div class="flex items-center space-x-2 text-green-400 font-bold">
         <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
@@ -75,18 +75,18 @@ const formatDate = (date: Date) => {
       
       <!-- User Actions -->
       <div class="flex items-center space-x-3 ml-4">
-        <button class="p-2 rounded-full bg-stone-800 hover:bg-stone-700 border border-stone-600 text-amber-400 transition-colors">
+        <button class="p-2 rounded-full bg-white hover:bg-slate-100 border border-slate-200 text-emerald-600 transition-colors shadow-sm">
           <Search :size="18" />
         </button>
-        <button class="p-2 rounded-full bg-stone-800 hover:bg-stone-700 border border-stone-600 text-amber-400 transition-colors relative">
+        <button class="p-2 rounded-full bg-white hover:bg-slate-100 border border-slate-200 text-emerald-600 transition-colors relative shadow-sm">
           <Bell :size="18" />
-          <span class="absolute top-0 right-0 w-2 h-2 bg-red-500 rounded-full border border-stone-900" />
+          <span class="absolute top-0 right-0 w-2 h-2 bg-red-500 rounded-full border border-white" />
         </button>
-        <button class="flex items-center space-x-2 px-3 py-1.5 rounded-full bg-gradient-to-r from-orange-900 to-stone-800 border border-orange-700 hover:from-orange-800 hover:to-stone-700 transition-all group">
-          <div class="bg-orange-500 rounded-full p-0.5">
+        <button class="flex items-center space-x-2 px-3 py-1.5 rounded-full bg-gradient-to-r from-emerald-600 to-emerald-500 border border-emerald-400 hover:from-emerald-700 hover:to-emerald-600 transition-all group shadow-md">
+          <div class="bg-white/20 rounded-full p-0.5">
             <User :size="16" class="text-white" />
           </div>
-          <span class="text-orange-100 group-hover:text-white transition-colors">Admin</span>
+          <span class="text-white font-medium">Admin</span>
         </button>
       </div>
     </div>

@@ -16,9 +16,9 @@ const mapPins: MapPin[] = [
 ]
 
 const getPinClasses = (status: string) => {
-  if (status === 'ok') return 'border-amber-400 bg-amber-900/50 text-amber-400'
-  if (status === 'warn') return 'border-orange-400 bg-orange-900/50 text-orange-400'
-  return 'border-red-500 bg-red-900/50 text-red-500 animate-bounce'
+  if (status === 'ok') return 'border-emerald-500 bg-emerald-100/80 text-emerald-700 shadow-sm'
+  if (status === 'warn') return 'border-amber-500 bg-amber-100/80 text-amber-700 shadow-sm'
+  return 'border-red-500 bg-red-100/80 text-red-700 animate-bounce shadow-sm'
 }
 
 // 功能区按钮配置
@@ -34,10 +34,10 @@ const functionButtons = [
 ]
 
 const getRankClass = (index: number) => {
-  if (index === 0) return 'bg-orange-500 text-white shadow-orange-500/50 shadow-lg'
-  if (index === 1) return 'bg-yellow-500 text-white'
-  if (index === 2) return 'bg-amber-500 text-white'
-  return 'bg-stone-700 text-stone-400'
+  if (index === 0) return 'bg-emerald-500 text-white shadow-emerald-500/30 shadow-lg'
+  if (index === 1) return 'bg-emerald-400 text-white'
+  if (index === 2) return 'bg-emerald-300 text-white'
+  return 'bg-slate-200 text-slate-500'
 }
 </script>
 
@@ -50,12 +50,12 @@ const getRankClass = (index: number) => {
       <TechBorderAlt1 title="系统概览" class="flex-1 min-h-[400px]">
         <div class="relative w-full h-full rounded overflow-hidden group">
           <!-- Placeholder for 3D Map Image -->
-          <div class="absolute inset-0 bg-gradient-to-b from-stone-900 to-orange-950/50">
+          <div class="absolute inset-0 bg-gradient-to-b from-slate-100 to-emerald-50/50">
             <!-- Grid floor -->
             <div 
               class="absolute inset-0" 
               :style="{ 
-                backgroundImage: 'linear-gradient(rgba(251,191,36,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(251,191,36,0.1) 1px, transparent 1px)', 
+                backgroundImage: 'linear-gradient(rgba(16,185,129,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(16,185,129,0.1) 1px, transparent 1px)', 
                 backgroundSize: '40px 40px',
                 transform: 'perspective(500px) rotateX(60deg) scale(2)',
                 transformOrigin: 'top center'
@@ -91,9 +91,9 @@ const getRankClass = (index: number) => {
           </div>
 
           <!-- Map Overlay Stats -->
-          <div class="absolute top-4 right-4 bg-stone-900/80 border border-stone-700 p-3 rounded backdrop-blur">
-            <div class="text-xs text-stone-400 mb-1">活跃区域</div>
-            <div class="text-xl font-bold text-white">42 / 50</div>
+          <div class="absolute top-4 right-4 bg-white/80 border border-slate-200 p-3 rounded backdrop-blur shadow-sm">
+            <div class="text-xs text-slate-500 mb-1">活跃区域</div>
+            <div class="text-xl font-bold text-slate-800">42 / 50</div>
           </div>
         </div>
       </TechBorderAlt1>
@@ -104,12 +104,12 @@ const getRankClass = (index: number) => {
           <button
             v-for="btn in functionButtons"
             :key="btn.name"
-            class="group relative flex flex-col items-center justify-center rounded-xl p-3 transition-all duration-300 cursor-pointer overflow-hidden border border-stone-700/50 bg-stone-800/40 hover:border-amber-500/50 hover:bg-stone-800/60"
+            class="group relative flex flex-col items-center justify-center rounded-xl p-3 transition-all duration-300 cursor-pointer overflow-hidden border border-slate-200 bg-white hover:border-emerald-500/50 hover:bg-emerald-50/50 shadow-sm hover:shadow-md"
           >
             <!-- Hover Gradient Background (Hidden by default, fades in) -->
             <div 
               :class="[
-                'absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-500 bg-gradient-to-br', 
+                'absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500 bg-gradient-to-br', 
                 btn.color
               ]" 
             />
@@ -117,26 +117,26 @@ const getRankClass = (index: number) => {
             <!-- Icon Container -->
             <div 
               :class="[
-                'w-10 h-10 rounded-lg flex items-center justify-center mb-3 transition-all duration-300 group-hover:scale-110 shadow-lg',
-                'bg-gradient-to-br border border-white/10 relative z-10',
+                'w-10 h-10 rounded-lg flex items-center justify-center mb-3 transition-all duration-300 group-hover:scale-110 shadow-sm',
+                'bg-gradient-to-br border border-white/50 relative z-10',
                 btn.color
               ]"
             >
               <component :is="btn.icon" class="w-5 h-5 text-white" />
               <!-- Gloss effect on icon -->
-              <div class="absolute inset-0 rounded-lg bg-gradient-to-br from-white/20 to-transparent pointer-events-none" />
+              <div class="absolute inset-0 rounded-lg bg-gradient-to-br from-white/30 to-transparent pointer-events-none" />
             </div>
 
             <!-- Text -->
-            <span class="text-stone-300 text-sm font-medium tracking-wide group-hover:text-white transition-colors relative z-10 font-tech">
+            <span class="text-slate-600 text-sm font-medium tracking-wide group-hover:text-emerald-700 transition-colors relative z-10 font-tech">
               {{ btn.name }}
             </span>
             
             <!-- Corner Decorations -->
-            <div class="absolute top-1 left-1 w-1 h-1 bg-stone-600 group-hover:bg-white transition-colors" />
-            <div class="absolute top-1 right-1 w-1 h-1 bg-stone-600 group-hover:bg-white transition-colors" />
-            <div class="absolute bottom-1 left-1 w-1 h-1 bg-stone-600 group-hover:bg-white transition-colors" />
-            <div class="absolute bottom-1 right-1 w-1 h-1 bg-stone-600 group-hover:bg-white transition-colors" />
+            <div class="absolute top-1 left-1 w-1 h-1 bg-slate-300 group-hover:bg-emerald-400 transition-colors" />
+            <div class="absolute top-1 right-1 w-1 h-1 bg-slate-300 group-hover:bg-emerald-400 transition-colors" />
+            <div class="absolute bottom-1 left-1 w-1 h-1 bg-slate-300 group-hover:bg-emerald-400 transition-colors" />
+            <div class="absolute bottom-1 right-1 w-1 h-1 bg-slate-300 group-hover:bg-emerald-400 transition-colors" />
           </button>
         </div>
       </TechBorderAlt2>
@@ -151,19 +151,19 @@ const getRankClass = (index: number) => {
           <div 
             v-for="(region, index) in REGION_DATA" 
             :key="region.id" 
-            class="flex items-center space-x-3 text-sm p-2 rounded-lg bg-stone-800/50 hover:bg-stone-700/50 transition-colors cursor-pointer"
+            class="flex items-center space-x-3 text-sm p-2 rounded-lg bg-slate-100 hover:bg-emerald-50 transition-colors cursor-pointer border border-transparent hover:border-emerald-200"
           >
             <div :class="['w-6 h-6 flex items-center justify-center rounded-full font-bold text-xs shrink-0', getRankClass(index)]">
               {{ index + 1 }}
             </div>
             <div class="flex-1 min-w-0">
-              <div class="text-stone-200 font-medium mb-1">{{ region.name }}</div>
+              <div class="text-slate-700 font-medium mb-1">{{ region.name }}</div>
               <div class="flex items-center space-x-4 text-xs">
-                <span class="text-amber-400 font-tech">
-                  <span class="text-stone-500">纬度:</span> {{ region.lat.toFixed(4) }}°
+                <span class="text-emerald-600 font-tech">
+                  <span class="text-slate-500">纬度:</span> {{ region.lat.toFixed(4) }}°
                 </span>
-                <span class="text-orange-400 font-tech">
-                  <span class="text-stone-500">经度:</span> {{ region.lng.toFixed(4) }}°
+                <span class="text-emerald-600 font-tech">
+                  <span class="text-slate-500">经度:</span> {{ region.lng.toFixed(4) }}°
                 </span>
               </div>
             </div>
