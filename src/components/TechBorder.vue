@@ -4,14 +4,14 @@ defineProps<{
   class?: string
 }>()
 
-const borderColor = '#22d3ee' // cyan-400
-const secondaryColor = 'rgba(34, 211, 238, 0.3)'
+const borderColor = '#fbbf24' // amber-400
+const secondaryColor = 'rgba(251, 191, 36, 0.3)'
 </script>
 
 <template>
   <div :class="['relative', $props.class]">
     <!-- Background Layer with transparency and blur -->
-    <div class="absolute inset-0 bg-[#0b1221]/40 backdrop-blur-sm rounded-lg border border-slate-800/50" />
+    <div class="absolute inset-0 bg-[#1c1917]/40 backdrop-blur-sm rounded-lg border border-stone-800/50" />
     
     <!-- Corner 1: Top-Left -->
     <div class="absolute top-0 left-0 w-24 h-24 pointer-events-none overflow-hidden rounded-tl-lg z-10">
@@ -61,12 +61,12 @@ const secondaryColor = 'rgba(34, 211, 238, 0.3)'
     <div class="relative z-0 p-6 h-full flex flex-col">
       <div v-if="title" class="flex items-center mb-5 relative">
         <!-- Animated Title Underline -->
-        <div class="absolute -bottom-2 left-0 w-full h-[1px] bg-gradient-to-r from-cyan-900/0 via-cyan-500/30 to-cyan-900/0" />
-        <div class="absolute -bottom-2 left-0 w-1/4 h-[1px] bg-cyan-400 shadow-[0_0_8px_#22d3ee]" />
+        <div class="absolute -bottom-2 left-0 w-full h-[1px] bg-gradient-to-r from-amber-900/0 via-amber-500/30 to-amber-900/0" />
+        <div class="absolute -bottom-2 left-0 w-1/4 h-[1px] bg-amber-400 shadow-[0_0_8px_#fbbf24]" />
         
         <!-- Title Start Decor -->
-        <div class="mr-3 flex items-center justify-center w-5 h-5 border border-cyan-500/30 rounded bg-cyan-950/50">
-          <div class="w-1.5 h-1.5 bg-cyan-400 rounded-sm shadow-[0_0_5px_#22d3ee]" />
+        <div class="mr-3 flex items-center justify-center w-5 h-5 border border-amber-500/30 rounded bg-stone-950/50">
+          <div class="w-1.5 h-1.5 bg-amber-400 rounded-sm shadow-[0_0_5px_#fbbf24]" />
         </div>
         
         <h3 class="text-xl font-bold text-white tracking-[0.15em] font-tech uppercase drop-shadow-md">
@@ -75,9 +75,9 @@ const secondaryColor = 'rgba(34, 211, 238, 0.3)'
         
         <!-- Title End Decor (Status Dots) -->
         <div class="ml-auto flex space-x-1.5 opacity-60">
-          <div class="w-1 h-3 bg-cyan-800 skew-x-12" />
-          <div class="w-1 h-3 bg-cyan-600 skew-x-12" />
-          <div class="w-1 h-3 bg-cyan-400 skew-x-12 animate-pulse" />
+          <div class="w-1 h-3 bg-amber-800 skew-x-12" />
+          <div class="w-1 h-3 bg-amber-600 skew-x-12" />
+          <div class="w-1 h-3 bg-amber-400 skew-x-12 animate-pulse" />
         </div>
       </div>
       <div class="flex-1 relative overflow-hidden">

@@ -8,7 +8,7 @@ defineProps<{
 <template>
   <div :class="['relative', $props.class]">
     <!-- Background with inner glow -->
-    <div class="absolute inset-0 bg-slate-950/90 rounded-lg backdrop-blur-sm" />
+    <div class="absolute inset-0 bg-stone-950/90 rounded-lg backdrop-blur-sm" />
     <div class="absolute inset-0 bg-gradient-to-br from-amber-500/5 via-transparent to-orange-500/5 rounded-lg" />
     
     <!-- Double border effect -->
