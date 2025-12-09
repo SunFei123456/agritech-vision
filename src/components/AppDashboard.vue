@@ -164,7 +164,7 @@ const getRankClass = (index: number) => {
       
       <!-- Regional Distribution -->
       <TechBorder title="监测点分布" class="flex-1">
-        <div class="space-y-3 overflow-y-auto max-h-[400px] pr-2">
+        <div class="space-y-3 overflow-y-auto max-h-[600px] pr-2">
           <div 
             v-for="(region, index) in REGION_DATA" 
             :key="region.id" 
